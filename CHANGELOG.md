@@ -4,6 +4,22 @@
 
 [1]: https://www.npmjs.com/package/googleapis?activeTab=versions
 
+## [48.0.0](https://www.github.com/googleapis/google-api-nodejs-client/compare/v47.0.0...v48.0.0) (2020-03-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* regenerate all APIs (#1978)
+
+### Features
+
+* regenerate all APIs ([#1978](https://www.github.com/googleapis/google-api-nodejs-client/issues/1978)) ([f0d4913](https://www.github.com/googleapis/google-api-nodejs-client/commit/f0d49136eaa12838a74a56aa45e08fa870278ae5))
+
+
+### Bug Fixes
+
+* **deps:** update dependency uuid to v7 ([#1970](https://www.github.com/googleapis/google-api-nodejs-client/issues/1970)) ([fdf096e](https://www.github.com/googleapis/google-api-nodejs-client/commit/fdf096ee80c87a98b7d20666a2e38996228fbaf1))
+
 ## [47.0.0](https://www.github.com/googleapis/google-api-nodejs-client/compare/v46.0.0...v47.0.0) (2020-01-16)
 
 
