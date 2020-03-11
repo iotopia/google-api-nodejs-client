@@ -550,13 +550,13 @@ export namespace bigquery_v2 {
      * [Optional] An array of objects that define dataset access for one or more entities. You can set this property when inserting or updating a dataset in order to control who is allowed to access the data. If unspecified at dataset creation time, BigQuery adds default dataset access for the following entities: access.specialGroup: projectReaders; access.role: READER; access.specialGroup: projectWriters; access.role: WRITER; access.specialGroup: projectOwners; access.role: OWNER; access.userByEmail: [dataset creator email]; access.role: OWNER;
      */
     access?: Array<{
+      specialGroup?: string;
+      role?: string;
       view?: Schema$TableReference;
       groupByEmail?: string;
       userByEmail?: string;
       domain?: string;
       iamMember?: string;
-      specialGroup?: string;
-      role?: string;
     }> | null;
     /**
      * [Output-only] The time when this dataset was created, in milliseconds since the epoch.
@@ -617,12 +617,12 @@ export namespace bigquery_v2 {
      * An array of the dataset resources in the project. Each resource contains basic information. For full information about a particular dataset resource, use the Datasets: get method. This property is omitted when there are no datasets in the project.
      */
     datasets?: Array<{
-      id?: string;
       location?: string;
       friendlyName?: string;
       kind?: string;
       labels?: {[key: string]: string};
       datasetReference?: Schema$DatasetReference;
+      id?: string;
     }> | null;
     /**
      * A hash value of the results page. You can use this property to determine if the page has changed since the last request.
@@ -1400,8 +1400,6 @@ export namespace bigquery_v2 {
      * List of jobs that were requested.
      */
     jobs?: Array<{
-      configuration?: Schema$JobConfiguration;
-      user_email?: string;
       errorResult?: Schema$ErrorProto;
       kind?: string;
       jobReference?: Schema$JobReference;
@@ -1409,6 +1407,8 @@ export namespace bigquery_v2 {
       state?: string;
       statistics?: Schema$JobStatistics;
       id?: string;
+      configuration?: Schema$JobConfiguration;
+      user_email?: string;
     }> | null;
     /**
      * The resource type of the response.
@@ -1803,11 +1803,11 @@ export namespace bigquery_v2 {
      * Projects to which you have at least READ access.
      */
     projects?: Array<{
-      numericId?: string;
       kind?: string;
       id?: string;
       projectReference?: Schema$ProjectReference;
       friendlyName?: string;
+      numericId?: string;
     }> | null;
     /**
      * The total number of projects in the list.
@@ -2393,18 +2393,18 @@ export namespace bigquery_v2 {
      * Tables in the requested dataset.
      */
     tables?: Array<{
-      clustering?: Schema$Clustering;
-      type?: string;
-      expirationTime?: string;
       kind?: string;
       view?: {useLegacySql?: boolean};
       creationTime?: string;
       rangePartitioning?: Schema$RangePartitioning;
       id?: string;
       tableReference?: Schema$TableReference;
-      friendlyName?: string;
       timePartitioning?: Schema$TimePartitioning;
+      friendlyName?: string;
       labels?: {[key: string]: string};
+      type?: string;
+      clustering?: Schema$Clustering;
+      expirationTime?: string;
     }> | null;
     /**
      * The total number of tables in the dataset.
